@@ -1,0 +1,38 @@
+{  
+    "version": 1,  
+    "disable_existing_loggers": false,  
+    "formatters": {  
+        "verbose": {  
+            "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"  
+        },  
+        "simple": {  
+            "format": "%(levelname)s %(message)s"  
+        }
+    },  
+    "handlers": {  
+        "access_file": {  
+            "level": "INFO",  
+            "class": "logging.FileHandler",  
+            "filename": "logs/access.log",  
+            "formatter": "simple"
+        },  
+        "error_file": {  
+            "level": "ERROR",  
+            "class": "logging.FileHandler",  
+            "filename": "logs/error.log",  
+            "formatter": "verbose"
+        }
+    },  
+    "loggers": {  
+        "uvicorn.access": {  
+            "handlers": ["access_file"],  
+            "level": "INFO",  
+            "propagate": false
+        },  
+        "uvicorn.error": {  
+            "handlers": ["error_file"],  
+            "level": "ERROR",  
+            "propagate": false
+        }
+    }
+}

@@ -1,0 +1,5 @@
+Model:
+  path: "model.json"
+  version: "1.0.0"
+  target: setosa,versicolor,virginica
+  feature_names: sepal_length,sepal_width,petal_length,petal_width
